@@ -3,4 +3,25 @@ console.log("CONTENT NOT YET LOADED!", fullname); //what will fullname evaluate 
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("CONTENT LOADED!");
+
+  console.log("Hello")
+ 
+  fetch('https://randomuser.me/api/')
+    .then( res => res.json() )
+    .then( data => {
+      console.log("Hi") 
+    })
+  
+  console.log("Sup?")
+
+  fetchData()
 });
+
+
+
+function fetchData(){
+  let data = fetch('https://randomuser.me/api/')
+    .then( res => res.json() )
+    .then( console.log )
+}
+
