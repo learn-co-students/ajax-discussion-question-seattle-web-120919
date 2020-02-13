@@ -3,4 +3,17 @@ console.log("CONTENT NOT YET LOADED!", fullname); //what will fullname evaluate 
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("CONTENT LOADED!");
+  fetchData();
 });
+
+function fetchData(){
+  fetch('https://randomuser.me/api/')
+    .then( res => res.json() )
+    .then( contact => console.log(contact) )
+}
+
+function renderInfo(contact){
+  const fullName = document.getElementById('fullname')
+  fullName.textContent = contact.name.title
+  console.log(fullName)
+}
